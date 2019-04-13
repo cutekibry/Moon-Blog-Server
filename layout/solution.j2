@@ -1,0 +1,77 @@
+{% extends "base.j2" %}
+
+{% set pagetitle = "%s %s %s - 题解" % (solution.oj, solution.id, solution.name) %}
+{% set pagetype = "solutions" %}
+
+{% block content %}
+  <div class="ui center aligned grid">
+    {# title #}
+    <div class="row">
+      <h1 class="ui header">#{{ solution.oj }} {{ solution.id }}. {{ solution.name }}</h1>
+    </div>
+
+    {# headertag #}
+    <div class="row" style="margin-top: -15px">
+      <span class="ui label">内存限制：{{ solution.memory_limit }} MiB</span>
+      <span class="ui label">时间限制：{{ solution.time_limit }} ms</span>
+      {% if solution.input_file and solution.output_file %}
+        <span class="ui label">输入文件：{{ solution.input_file }}</span>
+        <span class="ui label">输出文件：{{ solution.output_file }}</span>
+      {% else %}
+        <span class="ui label">标准输入输出</span>
+      {% endif %}
+    </div>
+
+    <div class="row" style="margin-top: -23px">
+      <span class="ui label">题目类型：传统</span>
+      {% if solution.special_judge %}
+        <span class="ui label">评测方式：Special Judge</span>
+      {% else %}
+        <span class="ui label">评测方式：文本比较</span>
+      {% endif %}
+    </div>
+
+    <div class="row" style="margin-top: -23px">
+      {% if solution.uploader %}
+        <span class="ui label">上传者：{{ solution.uploader }}</span>
+      {% else %}
+        <span class="ui label">上传者：匿名</span>
+      {% endif %}
+    </div>
+  </div>
+
+  {# Button #}
+  <div class="ui grid">
+    <div class="row">
+      <div class="column">
+        <div class="ui buttons">
+          <a class="small ui primary button" href="{{ solution.link }}">原题链接</a>
+          ::after
+        </div>
+      </div>
+    </div>
+
+    {% macro para(title, content) %}
+      <div class="row">
+        <div class="column">
+          <h4 class="ui top attached block header">{{ title }}</h4>
+          <div class="ui bottom attached segment font-content">
+            <div style="position: relative; overflow: hidden;">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endmacro %}
+
+    {{ para("题目描述", solution.description) }}
+    {{ para("输入格式", solution.input_format) }}
+    {{ para("输出格式", solution.output_format) }}
+    {{ para("样例", solution.example) }}
+    {{ para("数据范围与提示", solution.hint) }}
+    {{ para("题解", solution.solution) }}
+    {{ para("代码", solution.code) }}
+  </div>
+  
+  {% include "comment.j2" %}
+{% endblock content %}

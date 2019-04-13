@@ -1,0 +1,77 @@
+{% extends "base.j2" %}
+
+{% set pagetitle = "题解" %}
+{% set pagetype = "solutions" %}
+
+{% block content %}
+  <div class="padding">
+    <div class="ui grid" style="margin-bottom: 10px; ">
+      <div class="row" style="white-space: nowrap; ">
+        {# show tag #}
+        <div class="right aligned column">
+          <div class="ui toggle checkbox" id="show_tag">
+            <style id="show_tag_style"></style>
+            <script>
+              if (localStorage.getItem('show_tag') === '1') {
+                document.write('<input type="checkbox" checked>');
+                document.getElementById('show_tag_style').innerHTML = '.show_tag_controled { white-space: nowrap; overflow: hidden; }';
+              } else {
+                document.write('<input type="checkbox">');
+                document.getElementById('show_tag_style').innerHTML = '.show_tag_controled { width: 0; white-space: nowrap; overflow: hidden; }';
+              }
+            </script>
+            <script>
+              $(function () {
+                $('#show_tag').checkbox('setting', 'onChange', function () {
+                  let checked = $('#show_tag').checkbox('is checked');
+                  localStorage.setItem('show_tag', checked ? '1' : '0');
+                  if (checked) {
+                    document.getElementById('show_tag_style').innerHTML = '.show_tag_controled { white-space: nowrap; overflow: hidden; }';
+                  } else {
+                    document.getElementById('show_tag_style').innerHTML = '.show_tag_controled { width: 0; white-space: nowrap; overflow: hidden; }';
+                  }
+                });
+              });
+            </script>
+            <label>显示分类标签</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ pagination(no, tot, baseurl) }}
+
+    <table class="ui very basic center aligned table">
+      <thead>
+        <tr>
+          <th class="two wide">编号</th>
+          <th class="left aligned">题目名称</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for x in solutions %}
+          <tr style="height:44px">
+            <td><b>{{ x.oj }} {{ x.id }}</b></td>
+            <td class="left aligned">
+              <a style="vertical-align:middle" href="/solution/{{ x.oj }} {{ x.id}}">{{ x.name }}</a>
+              <div class="show_tag_controled" style="float:right">
+                {{ parsetags(x.tags) }}
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {{ pagination(no, tot, baseurl) }}
+    <script>
+      document.addEventListener('keydown', function (event) {
+        if (event.keyCode === 39)
+          document.getElementById('page_next').click();
+        else if (event.keyCode === 37)
+          document.getElementById('page_prev').click();
+      });
+    </script>
+  </div>
+{% endblock content %}

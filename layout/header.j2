@@ -1,0 +1,16 @@
+<div class="ui fixed borderless menu" style="position: fixed; height: 49px; ">
+  <div class="ui container">
+    {% macro _button(icon, code, name) -%}
+      {%- if pagetype == code -%}
+        <a class="item active" href="/{{ code }}"><i class="{{ icon }} icon"></i>{{ name }}</a>
+      {%- else -%}
+        <a class="item" href="/{{ code }}"><i class="{{ icon }} icon"></i>{{ name }}</a>
+      {%- endif -%}
+    {%- endmacro -%}
+
+    {{ _button("home", "", "首页") }}
+    {{ _button("list", "solutions", "题解") }}
+    {{ _button("pencil", "articles", "文章") }}
+    {{ _button("help circle", "about", "关于") }}
+  </div>
+</div>

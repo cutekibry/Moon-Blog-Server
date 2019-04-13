@@ -1,0 +1,16 @@
+{% extends "base.j2" %}
+
+{% set pagetitle = "关于" %}
+{% set pagetype = "about" %}
+
+{% block content %}
+  <div class="ui center aligned grid">
+    <div class="row">
+      <h1 class="ui header">关于</h1>
+    </div>
+  </div>
+
+  {{ text }}
+
+  {% include "comment.j2" %}
+{% endblock content %}

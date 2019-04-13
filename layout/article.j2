@@ -1,0 +1,16 @@
+{% extends "base.j2" %}
+
+{% set pagetitle = "%s - 文章" % article.name %}
+{% set pagetype = "articles" %}
+
+{% block content %}
+  <div class="ui center aligned grid">
+    <div class="row">
+      <h1 class="ui header">{{ article.name }}</h1>
+    </div>
+  </div>
+
+  {{ article.text }}
+
+  {% include "comment.j2" %}
+{% endblock content %}

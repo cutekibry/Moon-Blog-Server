@@ -1,0 +1,21 @@
+{% from 'macro.j2' import parsetags, pagination -%}
+<!doctype HTML>
+<html lang="zh-CN" style="position: fixed; width: 100%; overflow: hidden; ">
+
+<head>
+  {% include "import.j2" %}
+</head>
+
+<body style="position: relative; margin-top: 49px; height: calc(100% - 49px); overflow-y: overlay;">
+  {% include "header.j2" %}
+
+  <div style="margin-top: 28px; ">
+    <div class="ui main container">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    {% include "footer.j2" %}
+  </div>
+</body>
+
+</html>

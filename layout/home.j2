@@ -1,0 +1,82 @@
+{% extends "base.j2" %}
+
+{% set pagetitle = "主页" %}
+{% set pagetype = "" %}
+
+{% block content %}
+<div class="padding">
+  <div class="ui three column grid">
+    <!-- Left menu -->
+    <div class="eleven wide column">
+      <!-- Notice -->
+      <h4 class="ui top attached block header">
+        <i class="ui info icon"></i>公告
+      </h4>
+      <div class="ui bottom attached segment">
+        {{ notice }}
+      </div>
+
+      <!-- Comments -->
+      <h4 class="ui top attached block header">
+        <i class="ui pencil icon"></i>最新评论
+      </h4>
+      <div class="ui bottom attached segment">
+        {% for i in range(1, 6) -%}
+          {%- set x = comments[i] -%}
+          <p>{{ i }}. Re: <a href="{{ x.url }}">{{ x.url }}</a></p>
+          <p>
+            {{ x.comment.strip() }}
+          </p>
+          <div style="text-align: right; margin-top: 15px; font-size: 0.9em; color: rgb(102, 102, 102);">
+              ——{{ x.nick }}
+          </div>
+          <hr>
+        {%- endfor %}
+      </div>
+    </div>
+
+
+    <!-- Right menu -->
+    <div class="right floated five wide column">
+      <!-- Hitokoto -->
+      <h4 class="ui top attached block header">
+        <i class="ui quote left icon"></i>一言（ヒトコト）
+      </h4>
+      <div class="ui bottom attached center aligned segment">
+        <div class="ui centered inline loader" id="hitokoto-loader"></div>
+        <div style="font-size: 1em; line-height: 1.5em;" id="hitokoto-content">
+          米酒！
+        </div>
+        <div style="text-align: right; margin-top: 15px; font-size: 0.9em; color: rgb(102, 102, 102);"
+          id="hitokoto-from">
+          ——Tsukimaru Oshawott
+        </div>
+        <script>
+          var sentences = new Array(
+            {% for x in sentences -%}
+              new Array("{{ x[0].replace('"', '\\"') }}", "{{ x[1].replace('"', '\\"') }}"),
+            {%- endfor %}
+          )
+          p = Math.floor(Math.random() * sentences.length)
+          content = document.getElementById("hitokoto-content")
+          content.innerHTML = sentences[p][0];
+          from = document.getElementById("hitokoto-from")
+          from.innerHTML = "——" + sentences[p][1]; 
+        </script>
+      </div>
+
+      <!-- Links -->
+      <h4 class="ui top attached block header font-content">
+        <i class="ui linkify icon"></i>友情链接
+      </h4>
+      <div class="ui bottom attached segment">
+        <ul style="margin: 0; padding-left: 20px; ">
+          {% for x in links -%}
+            <li style="line-height: 25px"><a href="{{ x[0] }}">{{ x[1] }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+{% endblock content %}
