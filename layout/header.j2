@@ -12,5 +12,36 @@
     {{ _button("list", "solutions", "题解") }}
     {{ _button("pencil", "articles", "文章") }}
     {{ _button("help circle", "about", "关于") }}
+    <div class="right menu item">
+      <div class="ui toggle checkbox" id="dark_theme">
+        <link rel="stylesheet" href="" type="text/css" id="dark_theme_style">
+        <link rel="stylesheet" href="" type="text/css" id="dark_hljs_style">
+        <script>
+          if (localStorage.getItem('dark_theme') === '1') {
+            document.write('<input type="checkbox" checked>');
+            document.getElementById('dark_theme_style').href = '/static/css/dark-theme.css';
+            document.getElementById('dark_hljs_style').href = '/static/css/dark-hljs.css';
+          } else {
+            document.write('<input type="checkbox">');
+          }
+        </script>
+        <script>
+          $(function () {
+            $('#dark_theme').checkbox('setting', 'onChange', function () {
+              let checked = $('#dark_theme').checkbox('is checked');
+              localStorage.setItem('dark_theme', checked ? '1' : '0');
+              if (checked) {
+                document.getElementById('dark_theme_style').href = '/static/css/dark-theme.css';              
+                document.getElementById('dark_hljs_style').href = '/static/css/dark-hljs.css';
+              } else {
+                document.getElementById('dark_theme_style').href = '';
+                document.getElementById('dark_hljs_style').href = '';
+              }
+            });
+          });
+        </script>
+        <label>更换暗色主题</label>
+      </div>
+    </div>
   </div>
 </div>

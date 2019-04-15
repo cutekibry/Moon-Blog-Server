@@ -22,6 +22,9 @@ tags = [
 
     # Special
     ["未翻译", "red"],
+    ["未完成", "red"],
+
+    ["提交答案", "teal"],
 
     # Articles
     ["游记", "blue"],

@@ -96,7 +96,9 @@ class Solution():
         self.time_limit = self.meta.get('time_limit', 1000)
         self.input_file = self.meta.get('input_file', '')
         self.output_file = self.meta.get('output_file', '')
+
         self.special_judge = self.meta.get('special_judge', False)
+        self.upload_answer = self.meta.get('upload_answer', False)
 
     def parse(self):
         return env.get_template('solution.j2').render(solution=self)
@@ -146,7 +148,7 @@ class Solution_list():
         self.solutions = []
         self.baseurl = baseurl
 
-    def sort(self, key=lambda x: x.oj + ' ' + x.id):
+    def sort(self, key=lambda x: x.oj + (" %05s" % x.id)):
         self.solutions = sorted(self.solutions, key=key)
 
     def append(self, solution):
