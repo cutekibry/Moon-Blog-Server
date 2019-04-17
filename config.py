@@ -162,6 +162,7 @@ tags = [
     ["杜教筛", "olive"],
     ["洲阁筛", "olive"],
     ["Min-25 筛", "olive"],
+    ["质因数分解", "olive"],
 
     # ["DP", "pink"],
     ["背包 DP", "olive"],
@@ -187,6 +188,7 @@ tags = [
 
     # Others
     ["01 分数规划", "olive"],
+    ["分治", "olive"],
 
     ["数据结构", "pink"],
     ["图论", "pink"],

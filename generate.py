@@ -35,7 +35,7 @@ remove_list = ["about", "article", "articles",
 for x in remove_list:
     if dest.joinpath(x).exists():
         if dest.joinpath(x).is_dir():
-            shutil.rmtree(str(dest / x))
+            shutil.rmtree(dest / x)
         else:
             dest.joinpath(x).unlink()
 
@@ -47,6 +47,9 @@ for x in mkdir_list:
 
 # Copy static files
 shutil.copytree(src / "static", dest / "static")
+
+# Copy 404 page
+shutil.copyfile("layout/404.html", dest / "404.html")
 
 # Generate home page
 notice = markdown(content.joinpath("notice.md").read_text(encoding="utf-8"))

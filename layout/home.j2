@@ -22,7 +22,7 @@
       </h4>
       <div class="ui bottom attached segment">
         {% for i in range(1, 6) -%}
-          {%- set x = comments[i] -%}
+          {%- set x = comments[i - 1] -%}
           <p>{{ i }}. Re: <a href="{{ x.url }}">{{ x.url }}</a></p>
           <p>
             {{ x.comment.strip() }}
