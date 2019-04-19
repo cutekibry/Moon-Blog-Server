@@ -43,6 +43,7 @@ tags = [
     ["LOJ", "blue"],
     ["Project Euler", "blue"],
     ["SPOJ", "blue"],
+    ["USACO", "blue"],
 
     ["2001", "blue"],
     ["2002", "blue"],
@@ -107,6 +108,8 @@ tags = [
     # Algorithms
     # ["数据结构", "pink"],
     ["ST 表", "olive"],
+    ["队列", "olive"],
+    ["单调队列", "olive"],
     ["并查集", "olive"],
     ["线段树", "olive"],
     ["堆", "olive"],

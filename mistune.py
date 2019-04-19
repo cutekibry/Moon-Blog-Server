@@ -887,9 +887,11 @@ class Renderer(object):
         text = escape(text, quote=True)
         if title:
             title = escape(title, quote=True)
-            html = '<img src="%s" alt="%s" title="%s"' % (src, text, title)
+            html = '<img src="%s" alt="%s" title="%s" style="display: block; margin: 0px auto;"' % (
+                src, text, title)
         else:
-            html = '<img src="%s" alt="%s"' % (src, text)
+            html = '<img src="%s" alt="%s" style="display: block; margin: 0px auto;"' % (
+                src, text)
         if self.options.get('use_xhtml'):
             return '%s />' % html
         return '%s>' % html
@@ -983,7 +985,6 @@ class Markdown(object):
         return self.parse(text)
 
     def parse(self, text):
-        text = re.sub(r'\* ([^ \n]+) \*', lambda x: '*%s*' % x.group(1), text)
         text = re.sub(r'[\$]+[^\$]+[\$]+',
                       lambda x: '<latex>%s</latex>' % x.group(0).replace('<', '&lt;'), text)
 
