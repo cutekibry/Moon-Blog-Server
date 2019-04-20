@@ -155,6 +155,7 @@ tags = [
     ["容斥原理", "olive"],
     ["Min-Max 容斥", "olive"],
     ["博弈论", "olive"],
+    ["拉格朗日插值", "olive"],
 
     # ["数论", "pink"],
     ["原根", "olive"],
@@ -230,9 +231,7 @@ sentences = [
 
     ["优秀的人，到哪里都是很优秀的。", "kkksc03"],
 
-    ["很容易的基础题哦>.<", "mimi"],
-    ["你都刷那么多题了，快去颓废！", "mimi"],
-    ["不要 gay 里 gay 气...", "mimi"],
+    ["不知道这样的训练是否有用呢，ZJOI 会告诉我答案吧。", "Memset0"],
 
     ["级 150 轻轻松松！", "Tsukimaru"],
     ["明天开始到期末考结束，我会暂时断网。", "Tsukimaru"],
@@ -240,12 +239,17 @@ sentences = [
 
     ["啊，好几万老师！", "wjd"],
 
+    ["很容易的基础题哦>.<", "zcmimi"],
+    ["你都刷那么多题了，快去颓废！", "zcmimi"],
+    ["不要 gay 里 gay 气...", "zcmimi"],
+
     ["= =", "ZincSabian"],
     ["要么刷题，要么睡觉，你选一个。", "ZincSabian"],
     ["lmh 我真 tm 羡慕你的闲。", "ZincSabian"],
     ["lmh 我和你很熟么？", "ZincSabian"],
     ["考试加油啊 qwq", "ZincSabian"],
     ["删好友了，再见。", "ZincSabian"],
+    ["学了 OI 后悔三年，不学 OI 后悔一辈子。", "ZincSabian"],
 
     ["别慌，WA 的颜色也很好看——但时间永远不会等待你。", "千柒"],
 
