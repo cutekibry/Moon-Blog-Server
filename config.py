@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 ojlink_patterns = {
+    "JoyOI": lambda x: "http://www.joyoi.cn/problem/%s" % x,
     "BZOJ": lambda x: "https://www.lydsy.com/JudgeOnline/problem.php?id=%s" % x,
     "Codeforces": lambda x: "http://codeforces.com/contest/%s/problem/%s" % (x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
     "HDU": lambda x: "http://acm.hdu.edu.cn/showproblem.php?pid=%s" % x,
@@ -126,6 +127,7 @@ tags = [
     ["点分治", "olive"],
     ["线性基", "olive"],
     ["Bitset", "olive"],
+    ["差分", "olive"],
 
     # ["图论", "pink"],
     ["最短路", "olive"],
@@ -139,6 +141,7 @@ tags = [
     ["网络流", "olive"],
     ["最大流", "olive"],
     ["费用流", "olive"],
+    ["哈夫曼编码", "olive"],
 
     # ["数学", "pink"],
     ["概率与期望", "olive"],
@@ -156,6 +159,7 @@ tags = [
     ["Min-Max 容斥", "olive"],
     ["博弈论", "olive"],
     ["拉格朗日插值", "olive"],
+    ["伯努利数", "olive"],
 
     # ["数论", "pink"],
     ["原根", "olive"],
@@ -277,6 +281,8 @@ sentences = [
     ["这次考试考不好的话，不要担心，让它随风而去吧。", "杨老师"],
     ["古代埃及，圈一圈。", "杨老师"],
 
+    ["金刚石当然可以烧，只要有钱就行吧？", "化学老师"],
+
     # Others
     ["你们现在非常优秀，我希望你们能够更加优秀。", "李校长"],
 ]
@@ -295,4 +301,5 @@ links = [
     ["https://memset0.cn/", "Memset0"],
     ["https://oi.men.ci/", "Menci"],
     ["http://phantasmdragon.leanote.com/", "Phantasm Dragon"],
+    ["https://www.wjyyy.top/", "Wjyyy"],
 ]
