@@ -69,10 +69,12 @@ tags = [
 
     ["AHOI", "blue"],
     ["BJOI", "blue"],
+    ["CQOI", "blue"],
     ["HAOI", "blue"],
     ["HNOI", "blue"],
     ["JLOI", "blue"],
     ["JSOI", "blue"],
+    ["JXOI", "blue"],
     ["SCOI", "blue"],
     ["SDOI", "blue"],
     ["SHOI", "blue"],
@@ -301,5 +303,6 @@ links = [
     ["https://memset0.cn/", "Memset0"],
     ["https://oi.men.ci/", "Menci"],
     ["http://phantasmdragon.leanote.com/", "Phantasm Dragon"],
-    ["https://www.wjyyy.top/", "Wjyyy"],
+    ["https://www.wjyyy.top/", "wjyyy"],
+    ["https://wwylele.github.io/", "wwylele"],
 ]
