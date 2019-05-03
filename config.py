@@ -114,6 +114,7 @@ tags = [
     ["队列", "olive"],
     ["单调队列", "olive"],
     ["并查集", "olive"],
+    ["树状数组", "olive"],
     ["线段树", "olive"],
     ["堆", "olive"],
     ["可并堆", "olive"],
@@ -144,6 +145,8 @@ tags = [
     ["最大流", "olive"],
     ["费用流", "olive"],
     ["哈夫曼编码", "olive"],
+    ["矩阵树定理", "olive"],
+    ["LGV 定理", "olive"],
 
     # ["数学", "pink"],
     ["概率与期望", "olive"],
@@ -290,7 +293,10 @@ sentences = [
 ]
 
 links = [
+    ["", "Online Judges"],
     ["https://loj.ac/", "LibreOJ"],
+    ["https://www.luogu.org/", "LGOJ"],
+    ["", "朋友们"],
     ["https://www.cnblogs.com/AlenaNuna", "AlenaNuna"],
     ["https://www.cnblogs.com/Bunnycxk/", "Bunnycxk - 超级可爱聪明的小兔子！"],
     ["https://www.cnblogs.com/henry-1202/", "Henry_y - 黄烨男神老师"],
@@ -298,8 +304,10 @@ links = [
     ["https://www.cnblogs.com/quzhizhou/", "QuartZ_Z - orzzzzzzzz"],
     ["https://www.luogu.org/blog/AmbroseSamak", "sahmaykf"],
     ["https://www.cnblogs.com/zincsabian", "ZincSabian - 永不言弃的 ZincSabian"],
+    ["", "前辈们"],
     ["http://www.cnblogs.com/candy99/", "Candy?"],
     ["http://hzwer.com/", "Hzwer"],
+    ["https://www.cnblogs.com/finder-iot/", "iotang"],
     ["https://memset0.cn/", "Memset0"],
     ["https://oi.men.ci/", "Menci"],
     ["http://phantasmdragon.leanote.com/", "Phantasm Dragon"],
