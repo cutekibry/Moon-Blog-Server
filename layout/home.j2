@@ -65,6 +65,29 @@
         </script>
       </div>
 
+      <!-- Updates -->
+      <h4 class="ui top attached block header">
+        <i class="ui rss icon"></i>最近更新
+      </h4>
+      <div class="ui bottom attached segment">
+        <table class="ui very basic center aligned table">
+          <thead>
+            <tr>
+              <th width="70%">题目</th>
+              <th width="30%">更新时间</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for x in solutions.solutions[::-1][:5] -%}
+              <tr>
+                <td><a href="/solution/{{ x.oj }} {{ x.id }}">{{ x.name }}</a></td>
+                <td>{{ x.update_time }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+      	</table>
+      </div>
+
       <!-- Links -->
       <h4 class="ui top attached block header font-content">
         <i class="ui linkify icon"></i>友情链接

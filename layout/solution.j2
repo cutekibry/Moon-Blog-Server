@@ -42,7 +42,7 @@
       {% if solution.uploader %}
         <span class="ui label">上传者：{{ solution.uploader }}</span>
       {% else %}
-        <span class="ui label">上传者：匿名</span>
+        <span class="ui label">上传者：未知</span>
       {% endif %}
     </div>
   </div>
@@ -53,6 +53,9 @@
       <div class="column">
         <div class="ui buttons">
           <a class="small ui primary button" href="{{ solution.link }}">原题链接</a>
+          <a class="small ui positive button" href="https://raw.githubusercontent.com/cutekibry/cutekibry.github.io-Source/master/content/solutions/{{ solution.oj }} {{ solution.id }} {{ solution.name }}.md">查看源代码</a>
+          <a class="small ui orange button" href="https://github.com/cutekibry/cutekibry.github.io-Source/commits/master/content/solutions/{{ solution.oj }} {{ solution.id }} {{ solution.name }}.md">修改历史</a>
+          <a class="small ui yellow button" href="https://github.com/cutekibry/cutekibry.github.io-Source/blame/master/content/solutions/{{ solution.oj }} {{ solution.id }} {{ solution.name }}.md">版本对比</a>
           ::after
         </div>
       </div>

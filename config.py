@@ -131,6 +131,7 @@ tags = [
     ["线性基", "olive"],
     ["Bitset", "olive"],
     ["差分", "olive"],
+    ["虚树", "olive"],
 
     # ["图论", "pink"],
     ["最短路", "olive"],

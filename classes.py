@@ -2,8 +2,8 @@
 import config
 import yaml
 import mistune
+import datetime
 from jinja2 import Environment, FileSystemLoader
-
 
 env = Environment(loader=FileSystemLoader('layout'))
 env.globals.update(config.globals)
@@ -64,7 +64,7 @@ class Article():
 class Solution():
     """Article class."""
 
-    def __init__(self, oj, id, name, text):
+    def __init__(self, oj, id, name, text, file):
         self.oj = oj
         self.id = id
         self.name = name
@@ -100,6 +100,9 @@ class Solution():
         self.special_judge = self.meta.get('special_judge', False)
         self.upload_answer = self.meta.get('upload_answer', False)
 
+        self.update_time = datetime.datetime.utcfromtimestamp(
+            file.stat().st_mtime).strftime("%Y-%m-%d")
+
     def parse(self):
         return env.get_template('solution.j2').render(solution=self)
 
@@ -111,7 +114,7 @@ class Article_list():
         self.articles = []
         self.baseurl = baseurl
 
-    def sort(self, key=lambda x: ('0' if x.top else '1') + x.codename):
+    def sort(self, key=lambda x: [('0' if x.top else '1')] + [-ord(ch) for ch in x.codename]):
         self.articles = sorted(self.articles, key=key)
 
     def append(self, article):

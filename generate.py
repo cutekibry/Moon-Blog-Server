@@ -51,18 +51,6 @@ shutil.copytree(src / "static", dest / "static")
 # Copy 404 page
 shutil.copyfile("layout/404.html", dest / "404.html")
 
-# Generate home page
-notice = markdown(content.joinpath("notice.md").read_text(encoding="utf-8"))
-comments = json.loads(
-    src.joinpath("comments.json").read_text(encoding="utf-8")
-)
-dest.joinpath("index.html").write_text(env.get_template("home.j2").render(
-    notice=notice,
-    comments=comments,
-    sentences=config.sentences,
-    links=config.links,
-), encoding="utf-8")
-
 # Get solution set && Generate solution page
 solutions = dict()
 solutions[0] = Solution_list("solutions")
@@ -71,7 +59,7 @@ for x in content.joinpath("solutions").iterdir():
     filename = x.with_suffix("").name
     oj, id_, name = filename.split(" ", 2)
     text = x.read_text(encoding="utf-8")
-    solution = Solution(oj, id_, name, text)
+    solution = Solution(oj, id_, name, text, x)
 
     dir = dest.joinpath("solution/%s %s" % (oj, id_))
     dir.mkdir()
@@ -133,6 +121,22 @@ for i, a in articles.items():
         dir.joinpath("%d/index.html" % j).write_text(x, encoding="utf-8")
     dir.joinpath("index.html").touch()
     dir.joinpath("index.html").write_text(pages[0], encoding="utf-8")
+
+
+# Generate home page
+solutions[0].sort(key=lambda x: x.update_time)
+notice = markdown(content.joinpath("notice.md").read_text(encoding="utf-8"))
+comments = json.loads(
+    src.joinpath("comments.json").read_text(encoding="utf-8")
+)
+dest.joinpath("index.html").write_text(env.get_template("home.j2").render(
+    notice=notice,
+    comments=comments,
+    sentences=config.sentences,
+    solutions=solutions[0],
+    links=config.links,
+), encoding="utf-8")
+
 
 # Generate about page
 text = markdown(content.joinpath("about.md").read_text(encoding="utf-8"))
