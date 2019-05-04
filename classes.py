@@ -67,7 +67,7 @@ class Solution():
     def __init__(self, oj, id, name, text, file):
         self.oj = oj
         self.id = id
-        self.name = name
+        self.name = name.replace('／', '/')
         text, self.meta = getmeta(text)
 
         self.text = markdown(text)
@@ -101,7 +101,7 @@ class Solution():
         self.upload_answer = self.meta.get('upload_answer', False)
 
         self.update_time = datetime.datetime.utcfromtimestamp(
-            file.stat().st_mtime).strftime("%Y-%m-%d")
+            file.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
 
     def parse(self):
         return env.get_template('solution.j2').render(solution=self)

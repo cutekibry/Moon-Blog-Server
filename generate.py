@@ -8,7 +8,7 @@ import pathlib
 import shutil
 
 env.globals.update({
-    "BUILD_TIME": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC+8")
+    "BUILD_TIME": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 })
 
 # Add argparse

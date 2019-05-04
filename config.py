@@ -71,6 +71,7 @@ tags = [
     ["BJOI", "blue"],
     ["CQOI", "blue"],
     ["HAOI", "blue"],
+    ["HEOI", "blue"],
     ["HNOI", "blue"],
     ["JLOI", "blue"],
     ["JSOI", "blue"],
@@ -80,6 +81,7 @@ tags = [
     ["SHOI", "blue"],
     ["SNOI", "blue"],
     ["TJOI", "blue"],
+    ["YNOI", "blue"],
     ["ZJOI", "blue"],
 
     ["山东省队集训", "blue"],
@@ -132,6 +134,7 @@ tags = [
     ["Bitset", "olive"],
     ["差分", "olive"],
     ["虚树", "olive"],
+    ["Link-Cut Tree", "olive"],
 
     # ["图论", "pink"],
     ["最短路", "olive"],
@@ -175,7 +178,6 @@ tags = [
     ["欧拉函数", "olive"],
     ["杜教筛", "olive"],
     ["洲阁筛", "olive"],
-    ["Min-25 筛", "olive"],
     ["质因数分解", "olive"],
 
     # ["DP", "pink"],
@@ -185,6 +187,7 @@ tags = [
     ["环形 DP", "olive"],
     ["数位 DP", "olive"],
     ["树形 DP", "olive"],
+    ["斜率优化", "olive"],
 
     # ["字符串", "pink"],
     ["AC 自动机", "olive"],
@@ -203,6 +206,7 @@ tags = [
     # Others
     ["01 分数规划", "olive"],
     ["分治", "olive"],
+    ["CDQ 分治", "olive"],
 
     ["数据结构", "pink"],
     ["图论", "pink"],
@@ -294,24 +298,27 @@ sentences = [
 ]
 
 links = [
-    ["", "Online Judges"],
-    ["https://loj.ac/", "LibreOJ"],
-    ["https://www.luogu.org/", "LGOJ"],
-    ["", "朋友们"],
-    ["https://www.cnblogs.com/AlenaNuna", "AlenaNuna"],
-    ["https://www.cnblogs.com/Bunnycxk/", "Bunnycxk - 超级可爱聪明的小兔子！"],
-    ["https://www.cnblogs.com/henry-1202/", "Henry_y - 黄烨男神老师"],
-    ["https://zcmimi.tk/", "mimi"],
-    ["https://www.cnblogs.com/quzhizhou/", "QuartZ_Z - orzzzzzzzz"],
-    ["https://www.luogu.org/blog/AmbroseSamak", "sahmaykf"],
-    ["https://www.cnblogs.com/zincsabian", "ZincSabian - 永不言弃的 ZincSabian"],
-    ["", "前辈们"],
-    ["http://www.cnblogs.com/candy99/", "Candy?"],
-    ["http://hzwer.com/", "Hzwer"],
-    ["https://www.cnblogs.com/finder-iot/", "iotang"],
-    ["https://memset0.cn/", "Memset0"],
-    ["https://oi.men.ci/", "Menci"],
-    ["http://phantasmdragon.leanote.com/", "Phantasm Dragon"],
-    ["https://www.wjyyy.top/", "wjyyy"],
-    ["https://wwylele.github.io/", "wwylele"],
+    ["Online Judges", [
+        ["https://loj.ac/", "LibreOJ"],
+        ["https://www.luogu.org/", "LGOJ"],
+    ]],
+    ["朋友们", [
+        ["https://www.cnblogs.com/AlenaNuna", "AlenaNuna"],
+        ["https://www.cnblogs.com/Bunnycxk/", "Bunnycxk - 超级可爱聪明的小兔子！"],
+        ["https://www.cnblogs.com/henry-1202/", "Henry_y - 黄烨男神老师"],
+        ["https://zcmimi.tk/", "mimi"],
+        ["https://www.cnblogs.com/quzhizhou/", "QuartZ_Z - orzzzzzzzz"],
+        ["https://www.luogu.org/blog/AmbroseSamak", "sahmaykf"],
+        ["https://www.cnblogs.com/zincsabian", "ZincSabian - 永不言弃的 ZincSabian"],
+    ]],
+    ["前辈们", [
+        ["http://www.cnblogs.com/candy99/", "Candy?"],
+        ["http://hzwer.com/", "Hzwer"],
+        ["https://www.cnblogs.com/finder-iot/", "iotang"],
+        ["https://memset0.cn/", "Memset0"],
+        ["https://oi.men.ci/", "Menci"],
+        ["http://phantasmdragon.leanote.com/", "Phantasm Dragon"],
+        ["https://www.wjyyy.top/", "wjyyy"],
+        ["https://wwylele.github.io/", "wwylele"],
+    ]],
 ]
