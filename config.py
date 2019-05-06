@@ -83,6 +83,7 @@ tags = [
     ["TJOI", "blue"],
     ["YNOI", "blue"],
     ["ZJOI", "blue"],
+    ["联合省选", "blue"],
 
     ["山东省队集训", "blue"],
     ["雅礼集训", "blue"],
