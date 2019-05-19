@@ -1,13 +1,13 @@
 {% extends "base.j2" %}
 
-{% set pagetitle = "%s %s %s - 题解" % (solution.oj, solution.id, solution.name) %}
+{% set pagetitle = "%s - 题解" % solution.name %}
 {% set pagetype = "solutions" %}
 
 {% block content %}
   <div class="ui center aligned grid">
     {# title #}
     <div class="row">
-      <h1 class="ui header">#{{ solution.oj }} {{ solution.id }}. {{ solution.name }}</h1>
+      <h1 class="ui header">{{ solution.oj }} #{{ solution.id }}. {{ solution.name }}</h1>
     </div>
 
     {# headertag #}

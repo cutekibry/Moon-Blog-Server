@@ -9,6 +9,7 @@ ojlink_patterns = {
     "LGOJ": lambda x: "https://www.luogu.org/problemnew/show/%s" % x,
     "SPOJ": lambda x: "https://www.spoj.com/problems/%s/" % x,
     "UOJ": lambda x: "http://uoj.ac/problem/%s" % x,
+    "ZJU": lambda x: "http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=%s" % x,
 }
 
 globals = {
@@ -45,6 +46,7 @@ tags = [
     ["Project Euler", "blue"],
     ["SPOJ", "blue"],
     ["USACO", "blue"],
+    ["ZJU", "blue"],
 
     ["2001", "blue"],
     ["2002", "blue"],
@@ -99,8 +101,10 @@ tags = [
     ["CTSC", "blue"],
     ["THUSC", "blue"],
     ["THUPC", "blue"],
+    ["THUWC", "blue"],
     ["PKUSC", "blue"],
     ["PKUPC", "blue"],
+    ["PKUWC", "blue"],
 
     ["APIO", "blue"],
     ["IOI", "blue"],
