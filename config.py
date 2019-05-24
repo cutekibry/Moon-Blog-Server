@@ -330,4 +330,7 @@ links = [
         ["https://www.wjyyy.top/", "wjyyy"],
         ["https://wwylele.github.io/", "wwylele"],
     ]],
+    ["其他网站", [
+        ["http://bytew.net/OIer/", "OIerDb"],
+    ]],
 ]
