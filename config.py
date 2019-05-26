@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 ojlink_patterns = {
-    "JoyOI": lambda x: "http://www.joyoi.cn/problem/%s" % x,
     "BZOJ": lambda x: "https://www.lydsy.com/JudgeOnline/problem.php?id=%s" % x,
-    "Codeforces": lambda x: "http://codeforces.com/contest/%s/problem/%s" % (x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
+    "CF": lambda x: "http://codeforces.com/contest/%s/problem/%s" % (x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
+    "CFGYM": lambda x: "http://codeforces.com/gym/%s/problem/%s" % (x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
     "HDU": lambda x: "http://acm.hdu.edu.cn/showproblem.php?pid=%s" % x,
     "LOJ": lambda x: "https://loj.ac/problem/%s" % x,
     "LGOJ": lambda x: "https://www.luogu.org/problemnew/show/%s" % x,
@@ -27,6 +27,7 @@ tags = [
     ["未完成", "red"],
 
     ["提交答案", "teal"],
+    ["交互题", "teal"],
 
     # Articles
     ["游记", "blue"],
@@ -216,6 +217,7 @@ tags = [
     ["分治", "olive"],
     ["CDQ 分治", "olive"],
     ["贪心", "olive"],
+    ["随机化", "olive"],
 
     ["数据结构", "pink"],
     ["图论", "pink"],

@@ -11,32 +11,40 @@
     </div>
 
     {# headertag #}
-    {% if not solution.upload_answer -%}
+    {% if solution.interaction -%}
       <div class="row" style="margin-top: -15px">
-        <span class="ui label">内存限制：{{ solution.memory_limit }} MiB</span>
-        <span class="ui label">时间限制：{{ solution.time_limit }} ms</span>
-        {% if solution.input_file and solution.output_file -%}
-          <span class="ui label">输入文件：{{ solution.input_file }}</span>
-          <span class="ui label">输出文件：{{ solution.output_file }}</span>
-        {%- else -%}
-          <span class="ui label">标准输入输出</span>
-        {%- endif %}
+          <span class="ui label">内存限制：{{ solution.memory_limit }} MiB</span>
+          <span class="ui label">时间限制：{{ solution.time_limit }} ms</span>
+          <span class="ui label">题目类型：交互</span>
+      </div>      
+    {%- else -%}
+      {% if not solution.upload_answer -%}
+        <div class="row" style="margin-top: -15px">
+          <span class="ui label">内存限制：{{ solution.memory_limit }} MiB</span>
+          <span class="ui label">时间限制：{{ solution.time_limit }} ms</span>
+          {% if solution.input_file and solution.output_file -%}
+            <span class="ui label">输入文件：{{ solution.input_file }}</span>
+            <span class="ui label">输出文件：{{ solution.output_file }}</span>
+          {%- else -%}
+            <span class="ui label">标准输入输出</span>
+          {%- endif %}
+        </div>
+      {%- endif %}
+
+      {% if solution.upload_answer -%}
+        <div class="row" style="margin-top: -15px">
+          <span class="ui label">题目类型：答案提交</span>
+      {%- else -%}
+        <div class="row" style="margin-top: -23px">
+          <span class="ui label">题目类型：传统</span>
+      {%- endif %}
+        {% if solution.special_judge %}
+          <span class="ui label">评测方式：Special Judge</span>
+        {% else %}
+          <span class="ui label">评测方式：文本比较</span>
+        {% endif %}
       </div>
     {%- endif %}
-
-    {% if solution.upload_answer -%}
-      <div class="row" style="margin-top: -15px">
-        <span class="ui label">题目类型：答案提交</span>
-    {%- else -%}
-      <div class="row" style="margin-top: -23px">
-        <span class="ui label">题目类型：传统</span>
-    {%- endif %}
-      {% if solution.special_judge %}
-        <span class="ui label">评测方式：Special Judge</span>
-      {% else %}
-        <span class="ui label">评测方式：文本比较</span>
-      {% endif %}
-    </div>
 
     <div class="row" style="margin-top: -23px">
       {% if solution.uploader %}

@@ -98,6 +98,7 @@ class Solution():
         self.output_file = self.meta.get('output_file', '')
 
         self.special_judge = self.meta.get('special_judge', False)
+        self.interaction = self.meta.get('interaction', False)
         self.upload_answer = self.meta.get('upload_answer', False)
 
         self.update_time = datetime.datetime.utcfromtimestamp(
