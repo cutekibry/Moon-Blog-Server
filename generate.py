@@ -35,7 +35,7 @@ remove_list = ["about", "article", "articles",
 for x in remove_list:
     if dest.joinpath(x).exists():
         if dest.joinpath(x).is_dir():
-            shutil.rmtree(dest / x)
+            shutil.rmtree(str(dest / x))
         else:
             dest.joinpath(x).unlink()
 
@@ -46,10 +46,10 @@ for x in mkdir_list:
     dest.joinpath(x).mkdir()
 
 # Copy static files
-shutil.copytree(src / "static", dest / "static")
+shutil.copytree(str(src / "static"), str(dest / "static"))
 
 # Copy 404 page
-shutil.copyfile("layout/404.html", dest / "404.html")
+shutil.copyfile("layout/404.html", str(dest / "404.html"))
 
 # Get solution set && Generate solution page
 solutions = dict()
