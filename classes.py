@@ -21,7 +21,7 @@ for i, x in enumerate(config.tags):
 def getmeta(text):
     if text[:3] == '---' and text.find('---', 3) != - 1:
         p = text.find('---', 3)
-        meta = yaml.load(text[3: p].strip())
+        meta = yaml.load(text[3: p].strip(), Loader=yaml.FullLoader)
         text = text[p + 3:].strip()
     else:
         meta = dict()
@@ -50,7 +50,7 @@ class Article():
         self.name = name
         text, self.meta = getmeta(text)
 
-        self.codename = self.meta['codename']
+        self.date = self.meta['date']
         self.text = markdown(text)
 
         self.tags = sorted(
@@ -115,7 +115,7 @@ class Article_list():
         self.articles = []
         self.baseurl = baseurl
 
-    def sort(self, key=lambda x: [('0' if x.top else '1')] + [-ord(ch) for ch in x.codename]):
+    def sort(self, key=lambda x: x.top * -100000000 - x.date.toordinal()):
         self.articles = sorted(self.articles, key=key)
 
     def append(self, article):
