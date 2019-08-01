@@ -21,7 +21,7 @@ for i, x in enumerate(config.tags):
 def getmeta(text):
     if text[:3] == '---' and text.find('---', 3) != - 1:
         p = text.find('---', 3)
-        meta = yaml.load(text[3: p].strip(), Loader=yaml.FullLoader)
+        meta = yaml.load(text[3: p].strip())
         text = text[p + 3:].strip()
     else:
         meta = dict()

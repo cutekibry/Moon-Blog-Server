@@ -6,7 +6,7 @@ ojlink_patterns = {
     "CFGYM": lambda x: "http://codeforces.com/gym/%s/problem/%s" % (x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
     "HDU": lambda x: "http://acm.hdu.edu.cn/showproblem.php?pid=%s" % x,
     "LOJ": lambda x: "https://loj.ac/problem/%s" % x,
-    "LGOJ": lambda x: "https://www.luogu.org/problemnew/show/%s" % x,
+    "LGOJ": lambda x: "https://www.luogu.org/problem/%s" % x,
     "SPOJ": lambda x: "https://www.spoj.com/problems/%s/" % x,
     "UOJ": lambda x: "http://uoj.ac/problem/%s" % x,
     "ZJU": lambda x: "http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=%s" % x,
@@ -216,6 +216,7 @@ tags = [
     ["01 分数规划", "olive"],
     ["分治", "olive"],
     ["CDQ 分治", "olive"],
+    ["凸优化", "olive"],
     ["贪心", "olive"],
     ["随机化", "olive"],
 
@@ -310,6 +311,7 @@ sentences = [
 
 links = [
     ["Online Judges", [
+        ["http://139.224.115.97:5283/", "BunnyOJ"],
         ["https://loj.ac/", "LibreOJ"],
         ["https://www.luogu.org/", "LGOJ"],
     ]],
