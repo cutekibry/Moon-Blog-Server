@@ -265,7 +265,6 @@ sentences = [
 
     ["啊，好几万老师！", "wjd"],
 
-    ["很容易的基础题哦>.<", "zcmimi"],
     ["你都刷那么多题了，快去颓废！", "zcmimi"],
     ["不要 gay 里 gay 气...", "zcmimi"],
 
@@ -291,11 +290,11 @@ sentences = [
     ["你要记住：你是毕业班的同学，你是毕业班的同学，你是毕业班的同学！", "翁老师"],
     ["有些黑暗，只能你自己一个人跨过。", "翁老师"],
 
-    ["李明翰，你作文写得跟兔子尾巴似的。", "程老师"],
+    ["lmh，你作文写得跟兔子尾巴似的。", "程老师"],
     ["你是全村人的希望啊！", "程老师"],
 
     ["Q 吸，等于 CM 得儿↘塔↗T↘", "廖老师"],
-    ["这个东西都不会写啊？... 差劲！", "廖老师"],
+    ["这个东西都不会写啊？……差劲！", "廖老师"],
     ["臭小子，期末没有 85 分，我寒假给你布置 10 套试卷！", "廖老师"],
 
     ["啧啧啧... 优秀！优秀的 14 班！", "杨老师"],
@@ -311,32 +310,7 @@ sentences = [
 
 links = [
     ["Online Judges", [
-        ["http://139.224.115.97:5283/", "BunnyOJ"],
         ["https://loj.ac/", "LibreOJ"],
         ["https://www.luogu.org/", "LGOJ"],
-    ]],
-    ["朋友们", [
-        ["https://www.cnblogs.com/AlenaNuna", "AlenaNuna"],
-        ["https://www.cnblogs.com/Bunnycxk/", "Bunnycxk - 超级可爱聪明的小兔子！"],
-        ["https://www.cnblogs.com/henry-1202/", "Henry_y - 黄烨男神老师"],
-        ["https://zcmimi.tk/", "mimi"],
-        ["https://www.cnblogs.com/quzhizhou/", "QuartZ_Z - orzzzzzzzz"],
-        ["https://www.luogu.org/blog/AmbroseSamak", "sahmaykf"],
-        ["https://www.cnblogs.com/zincsabian", "ZincSabian - 永不言弃的 ZincSabian"],
-    ]],
-    ["前辈们", [
-        ["http://www.cnblogs.com/candy99/", "Candy?"],
-        ["http://hzwer.com/", "Hzwer"],
-        ["https://www.cnblogs.com/finder-iot/", "iotang"],
-        ["https://memset0.cn/", "Memset0"],
-        ["https://oi.men.ci/", "Menci"],
-        ["https://min-25.hatenablog.com/", "Min_25 - 数论神仙"],
-        ["http://phantasmdragon.leanote.com/", "Phantasm Dragon"],
-        ["http://picks.logdown.com/", "Picks"],
-        ["https://www.wjyyy.top/", "wjyyy"],
-        ["https://wwylele.github.io/", "wwylele"],
-    ]],
-    ["其他网站", [
-        ["http://bytew.net/OIer/", "OIerDb"],
     ]],
 ]
