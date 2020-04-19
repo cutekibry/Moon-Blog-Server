@@ -51,6 +51,8 @@ class Article():
         text, self.meta = getmeta(text)
 
         self.date = self.meta['date']
+        self.upddate = self.meta['upddate']
+        self.summary = self.meta['summary']
         self.text = markdown(text)
 
         self.tags = sorted(
@@ -115,7 +117,7 @@ class Article_list():
         self.articles = []
         self.baseurl = baseurl
 
-    def sort(self, key=lambda x: x.top * -100000000 - x.date.toordinal()):
+    def sort(self, key=lambda x: x.top * -100000000 - x.upddate.toordinal()):
         self.articles = sorted(self.articles, key=key)
 
     def append(self, article):

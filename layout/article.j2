@@ -4,14 +4,24 @@
 {% set pagetype = "articles" %}
 
 {% block content %}
-  <div class="ui center aligned grid">
-    <div class="row">
-      <h1 class="ui header">{{ article.name }}</h1>
+  <style type="text/css" xmlns:style="http://www.w3.org/1999/xhtml">.small{font-size: 0.7em;}</style>
+  <div class="padding">
+    <h1>{{ article.name }}</h1>
+    <p style="margin-bottom: -5px; ">
+      <img style="vertical-align: middle; margin-bottom: 2px; margin-right: 2px; " src="/static/img/avatar.png" width="17" height="17">
+      <b style="margin-right: 30px; ">Tsukimaru</b>
+      <b style="margin-right: 30px; "><i class="calendar icon"></i>{{ article.date }}</b>
+      <b style="margin-right: 30px; "><i class="edit icon"></i>{{ article.upddate }}</b>
+    </p>
+    
+    <div class="ui existing segment">
+      <div id="content" class="font-content">
+        <div style="position: relative; overflow: hidden; ">
+          {{ article.text }}
+        </div>
+      </div>
     </div>
   </div>
-  <br>
-  {{ article.text }}
-
 
   {% include "comment.j2" %}
 {% endblock content %}

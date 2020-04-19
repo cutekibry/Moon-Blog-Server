@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 ojlink_patterns = {
+    "AGC": lambda x: "https://atcoder.jp/contests/agc{0}/tasks/agc{0}_{1}".format(x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
     "BZOJ": lambda x: "https://www.lydsy.com/JudgeOnline/problem.php?id=%s" % x,
     "CF": lambda x: "http://codeforces.com/contest/%s/problem/%s" % (x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
     "CFGYM": lambda x: "http://codeforces.com/gym/%s/problem/%s" % (x[:-1-(not x[-1].isalpha())], x[-1-(not x[-1].isalpha())]),
@@ -32,9 +33,10 @@ tags = [
     # Articles
     ["游记", "blue"],
     ["专题", "blue"],
-    ["日记", "blue"],
+    ["文章", "blue"],
     ["杂项", "blue"],
     ["转载", "blue"],
+    ["R18", "red"],
 
     # Sources
     ["AtCoder", "blue"],
@@ -219,6 +221,7 @@ tags = [
     ["凸优化", "olive"],
     ["贪心", "olive"],
     ["随机化", "olive"],
+    ["思维题", "olive"],
 
     ["数据结构", "pink"],
     ["图论", "pink"],

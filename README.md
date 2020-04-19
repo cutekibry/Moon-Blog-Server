@@ -1,28 +1,25 @@
 # Moon-Blog-Server
+**警告：此项目稳定性极差，任何时候都可能出现极大的变动。Tsukimaru 不推荐使用此项目作为生产工具，仅推荐将此项目作为开发参考。**
+
 A static blog engine which provides Syzoj-like theme.
 
-## English / 英文
-Just as the description above.
+## 前置需求
+* Python3（默认使用最新版本）
+  - Jinja2
 
-Run `python3 generate.py [src] [dest]` to procedure the files into `dest` according to the `src`.
-
-For an example of the source directory, see [cutekibry/cutekibry.github.io-Source](https://github.com/cutekibry/cutekibry.github.io-Source).
-
-This repository uses [MIT License](https://mit-license.org/) as its license. Feel free to change or use the contents, but please don't do tort things (e.g. Tell others that it's all your original work).
-
-&copy; Tsukimaru Oshawott 2019
-
-All rights reserved.
-
-## Chinese / 中文
-就像上面的描述一样。
-
-运行 `python3 generate.py [src] [dest]` 来将 `src` 中的文件处理后输出到 `dest` 去。
+## 使用例
+```plain
+Usage:
+  python3 generate.py <src> <dest>
+Generate the site according the source code in <src> and output to <dest>.
+```
 
 对于源文件的一个例子，参照 [cutekibry/cutekibry.github.io-Source](https://github.com/cutekibry/cutekibry.github.io-Source)。
 
-该仓库使用 [MIT License](https://mit-license.org/) 作为其授权协议。你可以随意更改或使用其中的内容，但请不要侵权（例如向他人声明这是你全部原创的内容）。
+该项目所有由 Tsukimaru 编写的代码，默认使用 [MIT License](https://mit-license.org/) 作为其授权协议；
 
-&copy; Tsukimaru Oshawott 2019
+其他本项目使用的内容，例如 SYZOJ 等，默认使用原项目协议。本人保留这些项目作者或相关组织的任何合法权利。
+
+&copy; Tsukimaru Oshawott 2019-2020
 
 保留所有权利。
