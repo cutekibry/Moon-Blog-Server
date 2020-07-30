@@ -31,12 +31,13 @@ tags = [
     ["交互题", "teal"],
 
     # Articles
-    ["游记", "blue"],
-    ["专题", "blue"],
-    ["文章", "blue"],
-    ["杂项", "blue"],
-    ["转载", "blue"],
-    ["R18", "red"],
+    ["Moon", "teal"],
+    ["空", "black"],
+    ["游记", "green"],
+    ["算法", "green"],
+    ["文章", "green"],
+    ["杂项", "green"],
+    ["随想", "green"],
 
     # Sources
     ["AtCoder", "blue"],

@@ -45,8 +45,7 @@
       <thead>
         <tr>
           <th class="one wide">置顶</th>
-          <th class="one wide">更新日期</th>
-          <th class="one wide">发布日期</th>
+          <th class="two wide">发布日期</th>
           <th class="left aligned">文章名称</th>
         </tr>
       </thead>
@@ -59,7 +58,6 @@
                 <i class="up arrow icon"></span>
               {%- endif -%}
             </td>
-            <td><b>{{ x.upddate }}</b></td>
             <td><b>{{ x.date }}</b></td>
             <td class="left aligned">
               <a style="vertical-align:middle" href="/article/{{ x.name }}">{{ x.name }}</a>
@@ -69,7 +67,6 @@
             </td>
           </tr>
           <tr style="height:44px">
-            <td></td>
             <td></td>
             <td></td>
             <td class="left aligned">
