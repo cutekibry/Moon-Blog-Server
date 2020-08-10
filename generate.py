@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import config
-from classes import env, markdown, Solution, Solution_list, Article, Article_list
+from classes import env, Solution, Solution_list, Article, Article_list
+from parser import parse
+
 import argparse
 import datetime
 import json
@@ -29,7 +31,7 @@ lib = pathlib.Path().absolute().parent
 content = src / "content"
 
 # Remove directories
-remove_list = ["about", "article", "articles",
+remove_list = ["about", "article", "articles", "feedback",
                "static", "solution", "solutions", "index.html"]
 
 for x in remove_list:
@@ -125,7 +127,7 @@ for i, a in articles.items():
 
 # Generate home page
 solutions[0].sort(key=lambda x: x.update_time)
-notice = markdown(content.joinpath("notice.md").read_text(encoding="utf-8"))
+notice = parse(content.joinpath("notice.md").read_text(encoding="utf-8"))
 comments = json.loads(
     src.joinpath("comments.json").read_text(encoding="utf-8")
 )
@@ -139,8 +141,15 @@ dest.joinpath("index.html").write_text(env.get_template("home.j2").render(
 
 
 # Generate about page
-text = markdown(content.joinpath("about.md").read_text(encoding="utf-8"))
+text = parse(content.joinpath("about.md").read_text(encoding="utf-8"))
 dir = dest.joinpath("about")
 dir.mkdir()
 dir.joinpath("index.html").touch()
 dir.joinpath("index.html").write_text(env.get_template("about.j2").render(text=text))
+
+text = parse(content.joinpath("feedback.md").read_text(encoding="utf-8"))
+dir = dest.joinpath("feedback")
+dir.mkdir()
+dir.joinpath("index.html").touch()
+dir.joinpath("index.html").write_text(
+    env.get_template("feedback.j2").render(text=text))

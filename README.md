@@ -1,11 +1,14 @@
 # Moon-Blog-Server
 **警告：此项目稳定性极差，任何时候都可能出现极大的变动。Tsukimaru 不推荐使用此项目作为生产工具，仅推荐将此项目作为开发参考。**
 
+Mistune-contrib 中 math 模块支持不咋的，我不改了。11111
+
 A static blog engine which provides Syzoj-like theme.
 
 ## 前置需求
 * Python3（默认使用最新版本）
-  - Jinja2
+  - jinja2
+  - mistune
 
 ## 使用例
 ```plain

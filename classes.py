@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import config
 import yaml
-import mistune
+from parser import parse, split_meta
 import datetime
 from jinja2 import Environment, FileSystemLoader
 
@@ -9,23 +9,10 @@ env = Environment(loader=FileSystemLoader('layout'))
 env.globals.update(config.globals)
 
 
-markdown = mistune.Markdown()
-
-
 # Init tag dict
 tagdict = dict()
 for i, x in enumerate(config.tags):
     tagdict[x[0]] = i
-
-
-def getmeta(text):
-    if text[:3] == '---' and text.find('---', 3) != - 1:
-        p = text.find('---', 3)
-        meta = yaml.load(text[3: p].strip())
-        text = text[p + 3:].strip()
-    else:
-        meta = dict()
-    return [text, meta]
 
 
 class Tag():
@@ -48,12 +35,13 @@ class Article():
 
     def __init__(self, name, text):
         self.name = name
-        text, self.meta = getmeta(text)
+        self.meta, text = split_meta(text)
+        self.text = text
+        self.parsed_text = parse(text)
 
         self.date = self.meta['date']
-        self.upddate = self.meta['upddate']
-        self.summary = self.meta['summary']
-        self.text = markdown(text)
+        self.upddate = self.meta.get('upddate', self.date)
+        self.summary = self.meta.get('summary', '')
 
         self.tags = sorted(
             [Tag(str(x).strip(), 'articles') for x in self.meta.get('tags', [])], key=lambda x: x.id)
@@ -70,9 +58,9 @@ class Solution():
         self.oj = oj
         self.id = id
         self.name = name.replace('／', '/')
-        text, self.meta = getmeta(text)
-
-        self.text = markdown(text)
+        self.meta, text = split_meta(text)
+        self.text = text
+        self.parsed_text = parse(text)
 
         self.link = config.ojlink_patterns[self.oj](self.id)
 
@@ -86,13 +74,13 @@ class Solution():
         p5 = text.find('## 数据范围与提示')
         p6 = text.find('## 题解')
         p7 = text.find('## 代码')
-        self.description = markdown(text[p1 + len('## 题目描述'):p2].strip())
-        self.input_format = markdown(text[p2 + len('## 输入格式'):p3].strip())
-        self.output_format = markdown(text[p3 + len('## 输出格式'):p4].strip())
-        self.example = markdown(text[p4 + len('## 样例'):p5].strip())
-        self.hint = markdown(text[p5 + len('## 数据范围与提示'):p6].strip())
-        self.solution = markdown(text[p6 + len('## 题解'):p7].strip())
-        self.code = markdown(text[p7 + len('## 代码'):].strip())
+        self.description = parse(text[p1 + len('## 题目描述'):p2].strip())
+        self.input_format = parse(text[p2 + len('## 输入格式'):p3].strip())
+        self.output_format = parse(text[p3 + len('## 输出格式'):p4].strip())
+        self.example = parse(text[p4 + len('## 样例'):p5].strip())
+        self.hint = parse(text[p5 + len('## 数据范围与提示'):p6].strip())
+        self.solution = parse(text[p6 + len('## 题解'):p7].strip())
+        self.code = parse(text[p7 + len('## 代码'):].strip())
 
         self.memory_limit = self.meta.get('memory_limit', 256)
         self.time_limit = self.meta.get('time_limit', 1000)

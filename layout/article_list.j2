@@ -66,13 +66,15 @@
               </div>
             </td>
           </tr>
-          <tr style="height:44px">
-            <td></td>
-            <td></td>
-            <td class="left aligned">
-              <p>{{ x.summary }}</p>
-            </td>
-          </tr>
+          {%- if x.summary -%}
+            <tr style="height:44px">
+              <td></td>
+              <td></td>
+              <td class="left aligned">
+                <p>{{ x.summary }}</p>
+              </td>
+            </tr>
+          {%- endif -%}
         {% endfor %}
       </tbody>
     </table>
