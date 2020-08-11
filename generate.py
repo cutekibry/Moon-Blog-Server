@@ -126,7 +126,7 @@ for i, a in articles.items():
 
 
 # Generate home page
-solutions[0].sort(key=lambda x: x.update_time)
+solutions[0].sort(key=lambda x: x.date)
 notice = parse(content.joinpath("notice.md").read_text(encoding="utf-8"))
 comments = json.loads(
     src.joinpath("comments.json").read_text(encoding="utf-8")

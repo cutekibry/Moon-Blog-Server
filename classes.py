@@ -91,8 +91,7 @@ class Solution():
         self.interaction = self.meta.get('interaction', False)
         self.upload_answer = self.meta.get('upload_answer', False)
 
-        self.update_time = datetime.datetime.utcfromtimestamp(
-            file.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+        self.date = self.meta.get('date', datetime.date.fromtimestamp(file.stat().st_mtime))
 
     def parse(self):
         return env.get_template('solution.j2').render(solution=self)

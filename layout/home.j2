@@ -85,7 +85,7 @@
             {% for x in solutions.solutions[::-1][:5] -%}
               <tr>
                 <td><a href="/solution/{{ x.oj }} {{ x.id }}">{{ x.name }}</a></td>
-                <td>{{ x.update_time[:x.update_time.find(' ')] }}</td>
+                <td>{{ x.date }}</td>
               </tr>
             {% endfor %}
           </tbody>

@@ -6,8 +6,6 @@ case "$1" in
 	;;
 
 	"serve" )
-		echo Build
-		python3 generate.py ~/文档/cutekibry.github.io-source ~/文档/cutekibry.github.io
 		echo Serve
 		cd ~/文档/cutekibry.github.io && python3 -m http.server
 	;;
@@ -16,7 +14,7 @@ case "$1" in
 		if [ "$2" ]
 		then
 			echo Create LOJ \#$2
-			cd ../cutekibry.github.io-source && python3 newloj.py "$2"
+			cd ../cutekibry.github.io-source/tools && python3 newloj.py "$2"
 		else
 			echo Unknown id
 		fi
