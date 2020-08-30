@@ -5,6 +5,8 @@ from parser import parse, split_meta
 import datetime
 from jinja2 import Environment, FileSystemLoader
 
+from logger import logger
+
 env = Environment(loader=FileSystemLoader('layout'))
 env.globals.update(config.globals)
 
@@ -20,6 +22,7 @@ class Tag():
 
     def __init__(self, name, type):
         if not tagdict.get(name):
+            logger.warning('Tag "%s" is not in config but appeared in documents' % name)
             tagdict[name] = len(config.tags)
             config.tags.append([name, "white"])
         self.id = tagdict[name]
@@ -34,6 +37,8 @@ class Article():
     """Article class."""
 
     def __init__(self, name, text):
+        logger.debug('Initilizating article %s' % name)
+
         self.name = name
         self.meta, text = split_meta(text)
         self.text = text
@@ -55,6 +60,8 @@ class Solution():
     """Article class."""
 
     def __init__(self, oj, id, name, text, file):
+        logger.debug('Initilizating solution %s %s %s' % (oj, id, name))
+
         self.oj = oj
         self.id = id
         self.name = name.replace('／', '/')

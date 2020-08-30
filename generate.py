@@ -2,12 +2,14 @@
 import config
 from classes import env, Solution, Solution_list, Article, Article_list
 from parser import parse
+from logger import logger
 
 import argparse
 import datetime
 import json
 import pathlib
 import shutil
+
 
 env.globals.update({
     "BUILD_TIME": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")

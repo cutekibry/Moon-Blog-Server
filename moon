@@ -14,7 +14,17 @@ case "$1" in
 		if [ "$2" ]
 		then
 			echo Create LOJ \#$2
-			cd ../cutekibry.github.io-source/tools && python3 newloj.py "$2"
+			cd ../cutekibry.github.io-source/tools && python3 np.py LOJ "$2"
+		else
+			echo Unknown id
+		fi
+	;;
+
+	"lgoj" )
+		if [ "$2" ]
+		then
+			echo Create LGOJ \#$2
+			cd ../cutekibry.github.io-source/tools && python3 np.py LGOJ "$2"
 		else
 			echo Unknown id
 		fi
